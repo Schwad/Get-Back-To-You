@@ -1,9 +1,6 @@
 require 'csv'
 require 'fileutils'
 
-# Delete and remove still don't work, for some reason priority number is getting added in on the line content. adding and ID seems to be working fine
-#do what you did on line 36 to call and email
-
 puts "Time manager activate"
 puts ''
 puts ''
@@ -16,8 +13,6 @@ destination_directory = "manager_data_backups"
 while true
   puts ''
   such_length = File.open("data.csv").readlines.size
-
-
   command = gets.chomp
   fname = "data.csv"
   puts ''
@@ -71,7 +66,7 @@ while true
     time = Time.new
     timefile ="#{time.hour}:#{time.min}, #{time.day}/#{time.month}"
 
-    #complete the file
+    #copy the file
     CSV.foreach("data.csv") do |csvbig|
       if $INPUT_LINE_NUMBER == such_id
           csvbig << timefile
@@ -121,8 +116,6 @@ while true
     f.close
     dest.close
     FileUtils.cp(file_path_data_2, "data.csv")
-
-
 
   elsif command.split(//)[0..5].join('') == "backup"
     if command.split(//)[7..10].join('') == "data"
