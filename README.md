@@ -26,3 +26,5 @@ You may backup your data file, completed file, or deleted files with 'backup dat
  2. Need to identify tasks for completion or removal based on that ID number, currently at row number. 
 
  3. Obligatory code cleanup and refining.
+
+ 4. More robust use of the priority system and possible ranking and ordering. Maybe convert to array and sort by [-1]?
