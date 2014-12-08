@@ -28,3 +28,5 @@ You may backup your data file, completed file, or deleted files with 'backup dat
  3. Obligatory code cleanup and refining.
 
  4. More robust use of the priority system and possible ranking and ordering. Maybe convert to array and sort by [-1]?
+
+ 5. Display "completed"
