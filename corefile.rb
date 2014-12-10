@@ -134,6 +134,6 @@ while true
     end
 
   else
-    puts "The standard way to do a command sets type, content and priority.\n\n Such as 'call jeff smith before thursday 2'.\n\n 1 is the highest priority and down from there. Other commands include 'ls all', 'ls call', 'ls email', and exit. Those commands list your todos.\n\n You may also call 'taskno' to see the number of tasks.\n\n You may backup your data file, completed file, \n\n or deleted files with 'backup data' or \n\n 'backup completed' or 'backup removed'. \n\n If you have an issue with this program you can report it at https://github.com/Schwad"
+    puts "The standard way to do a command sets type, content and priority.\n\n Such as 'call jeff smith before thursday 2'.\n\n 1 is the highest priority and down from there. Other commands include 'ls all', 'ls call', 'ls email', and exit. Those commands list your todos.\n\n You may backup your data file, completed file, \n\n or deleted files with 'backup data' or \n\n 'backup completed' or 'backup removed'. \n\n If you have an issue with this program you can report it at https://github.com/Schwad"
   end
 end
