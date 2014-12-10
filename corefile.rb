@@ -28,24 +28,26 @@ while true
         csv << [such_length,"call", line_command, "#{time.hour}:#{time.min} #{time.day}/#{time.month}", line_input.split(//)[-3] ]
       end
 
-    elsif line_input.split(//)[0..4].join('') == "email"
-       line_command = line_input.split(//)[6..-5].join('')
-       CSV.open("data.csv", "ab") do |csv|
-        csv << [such_length,"email", line_command, "#{time.hour}:#{time.min} #{time.day}/#{time.month}", line_input.split(//)[-3] ]
-      end
-    end
+      elsif line_input.split(//)[0..4].join('') == "email"
+         line_command = line_input.split(//)[6..-5].join('')
+         CSV.open("data.csv", "ab") do |csv|
+          csv << [such_length,"email", line_command, "#{time.hour}:#{time.min} #{time.day}/#{time.month}", line_input.split(//)[-3] ]
+        end
+     end
 
   elsif command.split(//)[0..5].join('') == "ls all"
-
+    i = 0
     CSV.open("data.csv", :row_sep => :auto, :col_sep => ",") do |csv|
-      csv.each {|a,b,c,d,e| puts "#{b} #{c}, added #{d}, priority level #{e}. ID number #{a}\n" unless a == "RowNum"}
+      csv.each {|a,b,c,d,e| puts "#{i}.  #{b} #{c}, added #{d}, priority level #{e}.\n\n" unless a == "RowNum"  ##REMOVED 'ID number #{a}''
+        i += 1
+      }
     end
 
   elsif command.split(//)[0..7].join('') == "ls call"
     
     CSV.foreach("data.csv") do |row|
       if row[1] == "call"
-        puts "#{row[1]} #{row[2]}, added #{row[3]}, priority level #{row[4]}. ID number #{row[0]}\n"
+        puts "#{row[1]} #{row[2]}, added #{row[3]}, priority level #{row[4]}. \n\n" ##REMOVED 'ID number #{row[0]}'
       end
     end
 
@@ -53,7 +55,7 @@ while true
     
     CSV.foreach("data.csv") do |row|
       if row[1] == "email"
-        puts "#{row[1]} #{row[2]}, added #{row[3]}, priority level #{row[4]}. ID number #{row[0]}\n"
+        puts "#{row[1]} #{row[2]}, added #{row[3]}, priority level #{row[4]}. \n\n" ##REMOVED 'ID number #{row[0]}'
       end
     end
 
